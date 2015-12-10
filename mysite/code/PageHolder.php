@@ -8,13 +8,14 @@ class PageHolder extends Page {
 	);
 
 	private static $allowed_children = array (
-		'BlogPage',
-		'CustomerPage'
+		'BlogPage'
 	);
 
 	public function getCMSFields(){
 
 		$fields = parent::getCMSFields();
+		$fields->removeByName('Content');
+		$fields->removeByName('Metadata');
 		$fields->addFieldToTab('Root.Main', TextField::create('Factheading', 'Fact heading'), 'Content');
 		$fields->addFieldToTab('Root.Main', TextAreaField::create('Fact', 'Fun Fact'), 'Content');
 		

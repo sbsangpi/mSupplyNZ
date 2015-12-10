@@ -20,14 +20,14 @@ class HomePage extends Page{
 
 		$fields->addFieldsToTab('Root.Main', array (
 			TextField::create('Intro', 'Introduction'),
-			TextAreaField::create('CTA', 'CallToAction')
+			TextAreaField::create('CTA', 'Call To Action')
 		), 'Content');
 
 		$fields->addFieldsToTab('Root.Story', array (
-			TextField::create('StoryTitle'),
-			TextField::create('StorySubheading'),
-			TextAreaField::create('StoryContent'),
-			$upload = UploadField::create('StoryImage')
+			TextField::create('StoryTitle', 'Story Title'),
+			TextField::create('StorySubheading', 'Story Subheading'),
+			TextAreaField::create('StoryContent', 'Story Content'),
+			$upload = UploadField::create('StoryImage' ,'Story Image')
 		));
 
 		$upload->getValidator()->setAllowedExtensions(array(

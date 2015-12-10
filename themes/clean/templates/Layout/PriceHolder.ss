@@ -78,7 +78,7 @@
                         </div>
                         <div class="col-sm-4 col-md-offset-1">
                             <div class="well" style="height: 250px">
-                                $Content
+                               $Content
                             </div>
                         </div>
                     </div>

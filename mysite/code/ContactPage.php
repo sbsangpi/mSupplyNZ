@@ -1,7 +1,13 @@
 <?php
 
 class ContactPage extends Page {
+	public function getCMSFields(){
 
+		$fields = parent::getCMSFields();
+		$fields->removeByName('Content');
+		$fields->removeByName('Metadata');
+		return $fields;
+	}
 }
 
 class ContactPage_Controller extends Page_Controller {
@@ -46,5 +52,4 @@ class ContactPage_Controller extends Page_Controller {
 
 		return $this->redirectback();
 	}
-	
 }

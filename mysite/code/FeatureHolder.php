@@ -13,6 +13,8 @@ class FeatureHolder extends Page {
 	public function getCMSFields(){
 
 		$fields = parent::getCMSFields();
+		$fields->removeByName('Content');
+		$fields->removeByName('Metadata');
 		$fields->addFieldToTab('Root.Main', TextField::create('Subheading', 'Page Subheading'), 'Content');
 		
 		return $fields;
