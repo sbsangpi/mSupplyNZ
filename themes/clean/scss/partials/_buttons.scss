@@ -1,0 +1,44 @@
+.btn-default {
+    @include button-variant($dark, white, white);
+}
+
+.btn-primary {
+    @include button-variant(white, $primary-colour, $primary-colour);
+}
+
+.outline-btn {
+    @include button-variant-outline($primary-colour);
+}
+
+
+.btn {
+    border: none;
+    border-radius: 300px;
+    font-weight: 700;
+}
+
+#support-btn{
+	@include button-variant(white, $primary-colour, $primary-colour);
+	padding: 10px 0px;
+	margin: 13px 0 8px -40px;
+	border-radius: 3px;
+     @media (max-width: $medium) {
+        text-align: left;  
+        padding: 1em 2em;
+        margin: 0;
+    }
+}
+
+.square-btn{
+    @include button-variant(white, $primary-colour, $primary-colour);
+    padding: 10px 15px;
+    border-radius: 3px;
+}
+
+.btn-xl {
+    padding: 15px 30px;
+}
+
+.paypal img:hover{
+    cursor: pointer;
+}

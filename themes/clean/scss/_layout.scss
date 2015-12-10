@@ -1,0 +1,38 @@
+.container{
+    @media (min-width: 960px) {
+        width: 960px;
+    }
+}
+section,
+main {
+    padding: 60px 0;
+    @media (max-width: $small) {
+        padding: 30px 0;
+    }
+}
+
+aside {
+    padding: 60px 0;
+}
+.top-banner{
+	padding-top: 110px;
+	padding-bottom: 30px;
+}
+
+.banner-text{
+	margin-top: 60px;
+}
+
+// To Display Items Depending On Width
+.mobile-only{
+    display: none !important;
+    @media (max-width: $medium) {
+        display: block !important;
+    }
+}
+.desktop-only{
+    display: block !important;
+    @media (max-width: $medium) {
+        display: none !important;
+    }
+}

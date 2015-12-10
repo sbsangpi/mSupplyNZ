@@ -1,0 +1,92 @@
+#newsletter-banner{
+	
+	color: white;
+	background-color: #999;
+	p{
+		display: inline;
+		padding:10px 0;
+		color: white;
+		@media (max-width: $medium) {
+        	padding: 0;
+    	}
+	}
+	i{
+		margin-left: 0;
+	}
+	form{
+		display: inline;
+		margin-left: 20px;
+		width: 100%;
+		@media (max-width: $medium) {
+			display: block;
+			margin: 1em 0 2em;
+    	}
+    	fieldset,
+    	.form-actions{
+    		display: inline;
+    	}
+		.form-group{
+			display: inline-block;
+		}
+		input{
+			width: 220px;
+			@media (max-width: $medium) {
+				width: 180px;
+			}
+			border-radius: 3px 0 0 3px;
+			border: none;
+			display: inline-block;
+		}
+		button{
+			font-size: 10px;
+			border-radius: 0 3px 3px 0;
+			padding: 10px 25px;
+			margin-left: -4px;
+			display: inline-block;
+			@media (max-width: $medium) {
+        		margin-top: -0px;
+    		}
+		}
+	}
+	i{
+		margin-top: -2px;
+	}
+}
+
+footer{
+	padding: 30px 0 0;
+	background-color: #666;
+	h4{
+		color: white;
+	}
+	img{
+		height: 70px;
+		margin: 24px 0 10px;
+	}
+	p{
+		font-size: 10px;
+		color: white;
+	}
+	i{
+		color: white;
+	}
+	ul{
+		list-style: none;
+		margin: 0 0 4em;
+		@media (max-width: $medium) {
+        	margin: 0 0 1em;
+    	}
+		padding: 0;
+	}
+	li a{
+		color: white;
+	}
+	.footnote p{
+		font-size: 0.8em;
+		text-align: center;
+		@media (max-width: $medium) {
+       		text-align: left;
+    	}
+	}
+	
+}

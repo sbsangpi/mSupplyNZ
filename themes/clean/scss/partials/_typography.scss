@@ -1,0 +1,46 @@
+h2{
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+h2.page-heading{
+    margin-top: 1.5em;
+    font-size: 40px;
+    font-weight: 500;
+}
+h3{
+    letter-spacing: 1px;
+}
+h4{
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+p {
+    color: #444;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+a {
+    transition: all 0.35s;
+    letter-spacing: 1px;
+    color: $primary-colour;
+    &:hover,
+    &:focus {
+        color: darken($primary-colour, 10%);
+        text-decoration: none;
+    }
+}
+.section-heading {
+    margin-top: 0;
+}
+// Bootstrap Overrides
+.text-primary {
+    color: $primary-colour;
+}
+.text-faded {
+    color: fade(white, 70%);
+}
+i{
+    margin: 0.5em;
+}

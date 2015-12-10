@@ -1,0 +1,36 @@
+#features-tabs{
+	margin-top: 4em;
+	li a, h4{
+		color: #444;
+	}
+	li.active a{
+		color: $primary-colour;
+	}
+	.tab-pane{
+		margin-top: 3em;
+		p{
+			font-size: 14px;
+		}
+		> .row > div{
+			padding-right: 3em;
+			margin: 1em 0em;
+		}
+	}
+	.feature-box{
+		border: 1px solid #fff;
+		transition: all 0.2s;
+		&:hover{
+			background-color: #eee;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+		}
+		
+	}
+}
+@media (max-width: $medium) {
+
+	.nav-justified>li>a,
+    .nav-tabs.nav-justified>li>a{
+        text-align: left !important;
+    }
+}

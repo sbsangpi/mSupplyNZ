@@ -1,0 +1,76 @@
+// No shadow at the top of the homepage
+.navbar-default.landing-nav.affix-top{
+    border-color: #fff;
+    box-shadow: none;
+}
+// Shadow on the rest of the home page and the other pages
+.navbar-default.affix,
+.navbar-default.affix-top,
+.navbar-default.landing-nav.affix{
+   box-shadow: 0 0 2px rgba(6,8,8,0.15);
+}
+.navbar-default {
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    transition: all 0.35s;
+    border-color: #fff;
+    box-shadow: none;
+    li{
+        list-style: none;
+    }
+    #nav-img{
+        height: 46px;
+        padding: 0;
+        margin: -10px 10px 0 0;
+    }
+    button.navbar-toggle{
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+    .container-fluid{
+        padding: 0 4em;
+         @media (max-width: $large) {
+            padding: 0 2em;
+        }
+        @media (max-width: $small) {
+            padding: 0 1em;
+        }
+    }
+    
+    .nav {
+        >li{
+             width: 86px;
+            > a{
+                text-align: center;
+                padding: 24px 4px 20px;
+                color: #444;
+                font-size: 13px;
+                font-weight: 600;
+                &:hover {
+                    background-color: #f7f7f7;
+                }
+                &.current{
+                    color: $primary-colour;
+                }
+            }
+        }
+    }
+    
+    ul.dropdown-menu{
+        left: -84px;
+    }
+    @media (max-width: $small) {
+        .navbar-collapse{
+            max-height: 400px;
+        }
+        .nav>li{
+            width: 100%;
+            >a{
+                text-align: left;  
+                padding: 1em 2em;
+            }
+        }
+    }
+}
+
