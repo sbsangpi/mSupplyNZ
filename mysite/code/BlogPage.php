@@ -14,10 +14,6 @@ class BlogPage extends Page {
 		'Photo' => 'Image'
 	);
 
-	 private static $has_many = array (
-	 	'Comments' => 'BlogComment'
-	 );
-
 	private static $can_be_root = false;
 
 	public function getCMSFields(){
@@ -39,6 +35,12 @@ class BlogPage extends Page {
 }
 
 class BlogPage_Controller extends Page_Controller {
+
+	public function Comments ($PageID){
+		return Comment::get()
+			->filter('ParentID', $PageID)
+			->sort('Created', 'ASC');
+	}
 
 	private static $allowed_actions = array (
 		'CommentForm'
@@ -65,10 +67,10 @@ class BlogPage_Controller extends Page_Controller {
 	}
 
 	public function handleComment($data, $form){
-		$comment = BlogComment::create();
+		$comment = Comment::create();
 		$comment->Name = $data['Name'];
 		$comment->Comment = $data['Comment'];
-		$comment->BlogPageID = $this->ID;
+		$comment->ParentID = $this->ID;
 		$comment->write();
 
 		$form->sessionMessage('Thanks for your comment!','good');

@@ -14,3 +14,7 @@ SSViewer:
 SiteConfig:
   extensions:
     - SiteConfigExtension
+
+SiteTree:
+  extensions:
+    - CommentsExtension

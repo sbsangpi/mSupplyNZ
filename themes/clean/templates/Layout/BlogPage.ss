@@ -47,7 +47,7 @@
                 <hr>
 
                 <!-- Posted Comments -->
-                <% loop $Comments %>
+                <% loop $Comments($ID) %>
                     <div class="media">
                         <a class="pull-left" href="#">
                             <img class="media-object" src="$ThemeDir/img/avatar.gif">
