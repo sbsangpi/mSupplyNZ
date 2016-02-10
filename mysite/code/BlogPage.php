@@ -10,8 +10,8 @@ class BlogPage extends Page {
 		'Fact' => 'text'
 	);
 
-	private static $has_one = array (
-		'Photo' => 'Image'
+	private static $has_many = array (
+		'BlogPhotos' => 'Image'
 	);
 
 	private static $can_be_root = false;
@@ -24,7 +24,7 @@ class BlogPage extends Page {
 		$fields->addFieldToTab('Root.Main', TextAreaField::create('Intro', 'Intro'), 'Content');
 		$fields->addFieldToTab('Root.Main', TextField::create('Factheading', 'Fact Heading'), 'Content');
 		$fields->addFieldToTab('Root.Main', TextAreaField::create('Fact', 'Fun Fact'), 'Content');
-		$fields->addFieldToTab('Root.Attachments', $photo = UploadField::create('Photo'));
+		$fields->addFieldToTab('Root.Attachments', $photo = UploadField::create('BlogPhotos', 'Photos'));
 		
 		$photo->getValidator()->setAllowedExtensions(array('png', 'gif', 'jpg', 'jpeg'));
 		$photo->setFolderName('blog-photos');

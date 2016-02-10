@@ -21,9 +21,16 @@
                     <p><i class="fa fa-clock-o"></i> Posted on $Date.Long()</p>
                     <hr>
                 <% end_if %>
-
-                <% if $Photo %>
-                    <img class="img-responsive" src="$Photo.URL" alt="">
+                
+                <!-- Image Display -->
+                <% if $BlogPhotos %>
+                    <% if $BlogPhotos.Count == '1' %>
+                        <% loop $BlogPhotos %>
+                            <img src="$SetWidth(750).URL">
+                        <% end_loop %>
+                    <% else %>
+                        <% include Carousel %>
+                    <% end_if %>
                     <hr>
                 <% end_if %>
 
@@ -37,16 +44,10 @@
                 <div class="well">
                     <h4>Leave a Comment:</h4>
                     $CommentForm
-                    <!-- <form role="form">
-                        <div class="form-group">
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form> -->
                 </div>
-                <hr>
 
                 <!-- Posted Comments -->
+                <hr>
                 <% loop $Comments($ID) %>
                     <div class="media">
                         <a class="pull-left" href="#">

@@ -8,15 +8,22 @@
             <div class="col-sm-8">
                 <% loop $PaginatedChildren  %>
                     <div class="row">
-                        <% if $Photo %>
-                            <div class="col-sm-5">
-                                <a href="$Link">
-                                    <img src="$Photo.CroppedImage(250, 200).URL" class="img-responsive">
-                                </a>
-                                <br>
-                            </div>
-                            <div class="col-sm-7">
+                        
+                        <!-- Display The First Image If There Is One -->
+                        <% if $BlogPhotos %>
+                            <% loop BlogPhotos %>
+                                <% if First %>
+                                    <div class="col-sm-5">
+                                        <a href="$Link">
+                                            <img src="$CroppedImage(250, 200).URL" class="img-responsive">
+                                        </a>
+                                        <br>
+                                    </div>
+                                    <div class="col-sm-7">
+                                <% end_if %>
+                            <% end_loop %>
                         <% else %>
+
                             <div class="col-sm-8">
                         <% end_if %>
                             <h3><a href="$Link">$Title</a></h3>

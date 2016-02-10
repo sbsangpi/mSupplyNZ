@@ -42,7 +42,7 @@
 
 <!-- Locations Section -->
 <section>
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading">We're working around the globe</h2><br>
@@ -51,13 +51,12 @@
         </div>
         <div class="wolrd-map row desktop-only">
             <div class="world-map col-sm-12"></div>
-            <!-- include WolrdMap need to add ss tags -->
         </div>
-    </div>
+    </div> -->
 
     <!-- Customer Story Section-->
-    <br>
-    <br>
+    <!-- <br>
+    <br> -->
     <div class="container-fluid story-holder">
         <div class="row">
             <div class="col-sm-6 img-holder">

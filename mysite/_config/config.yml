@@ -18,3 +18,7 @@ SiteConfig:
 SiteTree:
   extensions:
     - CommentsExtension
+
+Image:
+  extensions:
+    - BlogPhotoExtension
