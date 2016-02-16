@@ -1,12 +1,13 @@
 <?php
 
-class Profile extends DataObject{
-
+class Profile extends DataObject
+{
 	private static $db = array (
 		'Name' => 'Varchar',
 		'Job' => 'Varchar',
 		'Description' => 'Text'
 	);
+
 	private static $has_one = array (
 		'Photo' => 'Image',
 		'AboutPage' => 'AboutPage'
@@ -19,8 +20,8 @@ class Profile extends DataObject{
 		'Description' => 'Desciption'
 	);
 
-	public function getCMSFields(){
-
+	public function getCMSFields()
+	{
 		$fields = FieldList::create(
 			TextField::create('Name'),
 			TextField::create('Job'),
@@ -36,5 +37,4 @@ class Profile extends DataObject{
 
 		return $fields;
 	}
-
 }

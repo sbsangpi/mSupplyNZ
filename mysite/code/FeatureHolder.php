@@ -1,7 +1,7 @@
 <?php
 
-class FeatureHolder extends Page {
-
+class FeatureHolder extends Page
+{
 	private static $db = array(
 		'Subheading' => 'Varchar'
 	);
@@ -10,8 +10,8 @@ class FeatureHolder extends Page {
 		'FeaturesPage'
 	);
 
-	public function getCMSFields(){
-
+	public function getCMSFields()
+	{
 		$fields = parent::getCMSFields();
 		$fields->removeByName('Content');
 		$fields->removeByName('Metadata');
@@ -21,18 +21,17 @@ class FeatureHolder extends Page {
 	}
 }
 
-class FeatureHolder_Controller extends Page_Controller {
-
-
-	public function TabNumber(){
-
+class FeatureHolder_Controller extends Page_Controller
+{
+	public function TabNumber()
+	{
 		$param = $this->getRequest()->getVar('tab');
 
 		// Remove the trailing backslash
 		$param = substr($param, 0, 1);
 		$param = (int)$param;
 
-		if ($param == 0){
+		if ($param == 0) {
 			return 1;
 		} else {
 			return $param;

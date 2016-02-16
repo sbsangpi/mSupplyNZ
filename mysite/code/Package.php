@@ -1,7 +1,7 @@
 <?php
 
-class Package extends DataObject{
-
+class Package extends DataObject
+{
 	private static $db = array (
 		'Title' => 'Varchar',
 		'Price' => 'Varchar',
@@ -11,6 +11,7 @@ class Package extends DataObject{
 		'Item3' => 'Varchar(100)',
 		'Item4' => 'Varchar(100)'
 	);
+
 	private static $has_one = array (
 		'PriceHolder' => 'PriceHolder'
 	);
@@ -21,8 +22,8 @@ class Package extends DataObject{
 		'Description' => 'Desciption'
 	);
 
-	public function getCMSFields(){
-
+	public function getCMSFields()
+	{
 		$fields = FieldList::create(
 			TextField::create('Title'),
 			TextField::create('Price'),
@@ -32,8 +33,6 @@ class Package extends DataObject{
 			TextField::create('Item3'),
 			TextField::create('Item4')
 		);
-
 		return $fields;
 	}
-
 }

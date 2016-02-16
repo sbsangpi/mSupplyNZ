@@ -7,12 +7,12 @@ class AboutPage extends Page
 		'Subheading' => 'Varchar'
 	);
 
-	private static $has_many = array (
+	private static $has_many = array(
 		'Profiles' => 'Profile'
 	);
 
-	public function getCMSFields(){
-
+	public function getCMSFields()
+	{
 		$fields = parent::getCMSFields();
 
 		$fields->addFieldToTab( 'Root.Profiles', GridField::create(

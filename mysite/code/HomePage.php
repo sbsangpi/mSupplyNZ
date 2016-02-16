@@ -1,7 +1,7 @@
 <?php
 
-class HomePage extends Page{
-
+class HomePage extends Page
+{
 	private static $db = array(
 		'Intro' => 'Varchar',
 		'CTA' => 'Text',
@@ -15,7 +15,8 @@ class HomePage extends Page{
 	);
 
 
-	public function getCMSFields(){
+	public function getCMSFields()
+	{
 		$fields = parent::getCMSFields();
 
 		$fields->addFieldsToTab('Root.Main', array (
@@ -40,7 +41,7 @@ class HomePage extends Page{
 
 }
 
-class HomePage_Controller extends Page_Controller{
-
+class HomePage_Controller extends Page_Controller
+{
 
 }

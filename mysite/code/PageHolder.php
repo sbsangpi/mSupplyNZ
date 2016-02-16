@@ -1,18 +1,18 @@
 <?php
 
-class PageHolder extends Page {
-
+class PageHolder extends Page
+{
 	private static $db = array(
 		'Factheading' => 'Varchar',
 		'Fact' => 'text'
 	);
 
-	private static $allowed_children = array (
+	private static $allowed_children = array(
 		'BlogPage'
 	);
 
-	public function getCMSFields(){
-
+	public function getCMSFields()
+	{
 		$fields = parent::getCMSFields();
 		$fields->removeByName('Content');
 		$fields->removeByName('Metadata');
@@ -23,13 +23,12 @@ class PageHolder extends Page {
 	}
 }
 
-class PageHolder_Controller extends Page_Controller {
-
-	public function PaginatedChildren() {
+class PageHolder_Controller extends Page_Controller
+{
+	public function PaginatedChildren()
+	{
 		$pages = new PaginatedList($this->Children(), $this->request);
 		$pages->setPageLength(3);
 		return $pages;
 	}
-
-	
 }

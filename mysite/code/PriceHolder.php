@@ -1,7 +1,7 @@
 <?php
 
-class PriceHolder extends Page{
-
+class PriceHolder extends Page
+{
 	private static $has_many = array (
 		'Packages' => 'Package',
 		'PricePages' => 'PricePage'
@@ -15,8 +15,8 @@ class PriceHolder extends Page{
 		'Subheading' => 'Varchar'
 	);
 
-	public function getCMSFields(){
-
+	public function getCMSFields()
+	{
 		$fields = parent::getCMSFields();
 
 		$fields->addFieldToTab('Root.Main', TextField::create('Subheading', 'Page Subheading'), 'Content');
@@ -32,11 +32,10 @@ class PriceHolder extends Page{
 	}
 }
 
-class PriceHolder_Controller extends Page_Controller{
-
-
-	public function PricePages(){
-
+class PriceHolder_Controller extends Page_Controller
+{
+	public function PricePages()
+	{
 		return PricePage::get()
 			->sort('Created', 'ASC');
 	}

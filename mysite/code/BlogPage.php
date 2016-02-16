@@ -1,6 +1,7 @@
 <?php
 
-class BlogPage extends Page {
+class BlogPage extends Page
+{
 
 	private static $db = array(
 		'Date' => 'Date',
@@ -10,7 +11,7 @@ class BlogPage extends Page {
 		'Fact' => 'text'
 	);
 
-	private static $has_many = array (
+	private static $has_many = array(
 		'BlogPhotos' => 'Image'
 	);
 
@@ -34,18 +35,22 @@ class BlogPage extends Page {
 
 }
 
-class BlogPage_Controller extends Page_Controller {
+class BlogPage_Controller extends Page_Controller
+{
 
-	public function Comments ($PageID){
+	public function Comments($PageID)
+	{
 		return Comment::get()
 			->filter('ParentID', $PageID)
 			->sort('Created', 'ASC');
 	}
 
-	private static $allowed_actions = array (
+	private static $allowed_actions = array(
 		'CommentForm'
 	);
-	public function CommentForm(){
+
+	public function CommentForm()
+	{
 		$form = BootstrapForm::create(
 			$this,
 			__Function__,
@@ -66,7 +71,8 @@ class BlogPage_Controller extends Page_Controller {
 		return $form;
 	}
 
-	public function handleComment($data, $form){
+	public function handleComment($data, $form)
+	{
 		$comment = Comment::create();
 		$comment->Name = $data['Name'];
 		$comment->Comment = $data['Comment'];

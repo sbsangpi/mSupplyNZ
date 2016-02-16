@@ -1,12 +1,13 @@
 <?php
 
-class DownloadsPage extends Page{
+class DownloadsPage extends Page
+{
 
-	private static $has_many = array (
+	private static $has_many = array(
 		'DownloadTabs' => 'DownloadTab'
 	);
 
-	private static $allowed_children = array (
+	private static $allowed_children = array(
 		'DownloadTab'
 	);
 	
@@ -14,7 +15,8 @@ class DownloadsPage extends Page{
 		'Subheading' => 'Varchar'
 	);
 
-	public function getCMSFields(){
+	public function getCMSFields()
+	{
 
 		$fields = parent::getCMSFields();
 		$fields->removeByName('Content');
@@ -28,6 +30,7 @@ class DownloadsPage extends Page{
 	}
 }
 
-class DownloadsPage_Controller extends Page_Controller{
+class DownloadsPage_Controller extends Page_Controller
+{
 
 }

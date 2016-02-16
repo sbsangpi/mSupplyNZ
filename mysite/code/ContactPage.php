@@ -1,6 +1,7 @@
 <?php
 
-class ContactPage extends Page {
+class ContactPage extends Page
+{
 	public function getCMSFields(){
 
 		$fields = parent::getCMSFields();
@@ -10,13 +11,15 @@ class ContactPage extends Page {
 	}
 }
 
-class ContactPage_Controller extends Page_Controller {
+class ContactPage_Controller extends Page_Controller
+{
 
-	private static $allowed_actions = array (
+	private static $allowed_actions = array(
 		'ContactForm'
 	);
 	
-	public function ContactForm(){
+	public function ContactForm()
+	{
 		$form = BootstrapForm::create(
 			$this,
 			__FUNCTION__,
@@ -34,7 +37,8 @@ class ContactPage_Controller extends Page_Controller {
 		return $form;
 	}
 
-	public function sendContactForm($data, $form){
+	public function sendContactForm($data, $form)
+	{
 		$email = new Email();
 		$email
 		    ->setFrom('"mSupply Contact Form" <mSupply@mail.yakpost.org>')

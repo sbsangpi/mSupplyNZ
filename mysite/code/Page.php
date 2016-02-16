@@ -1,32 +1,23 @@
 <?php
-class Page extends SiteTree {
-
+class Page extends SiteTree
+{
 	private static $db = array(
 		'AdminTags' => 'Text'
 	);
 
-	public function getCMSFields(){
-		$fields = parent::getCMSFields();
-
-		// $fields->addFieldToTab('Root.Main', TextAreaField::create('AdminTags', 'Admin Tags'), 'Metadata');
-		
-		return $fields;
-		
-	}
-
-	public function ButtonShortCodeHandler ($arguments, $content = null, $parser = null, $tagName){
+	public function ButtonShortCodeHandler($arguments, $content = null, $parser = null, $tagName){
 
 		$link = $arguments['href'];
 
 		return "<button href=".$link." class='btn btn-primary'>".
 			$content
 			."</button>";
-   
 	}
 }
 
 
-class Page_Controller extends ContentController {
+class Page_Controller extends ContentController
+{
 
 	/**
 	 * An array of actions that can be accessed via a request. Each array element should be an action name, and the
@@ -43,18 +34,20 @@ class Page_Controller extends ContentController {
 	 *
 	 * @var array
 	 */
-	private static $allowed_actions = array (
+	private static $allowed_actions = array(
 		'NewsletterForm'
 	);
 
-	public function init() {
+	public function init()
+	{
 		parent::init();
-			
+		
+		// CSS Requirements
 		Requirements::css("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
 		Requirements::css("{$this->ThemeDir()}/font-awesome/css/font-awesome.min.css");
 		Requirements::css("{$this->ThemeDir()}/css/main.min.css");
 
-
+		// Javascript Requirements
 	    Requirements::javascript("{$this->ThemeDir()}/js/jquery.js");
 	    Requirements::javascript("{$this->ThemeDir()}/js/bootstrap.min.js");
 	    Requirements::javascript("{$this->ThemeDir()}/js/jquery.easing.min.js");
@@ -62,20 +55,23 @@ class Page_Controller extends ContentController {
 	}
 
 	// Get the features page to display on the homepage
-	public function FeaturePages(){
+	public function FeaturePages()
+	{
 		return FeaturesPage::get()
 				->sort('Created', 'ASC');
 	}
 
 	// Get the latest news / blog posts
-	public function LatestNews($count){
+	public function LatestNews($count)
+	{
 		return BlogPage::get()
 				->filter('ParentID','18')
 				->sort('Created', 'ASC')
 				->limit($count);
 	}
 	
-	public function NewsletterForm(){
+	public function NewsletterForm()
+	{
 		$form = BootstrapForm::create(
 			$this,
 			__FUNCTION__,
@@ -94,7 +90,8 @@ class Page_Controller extends ContentController {
 	}
 
 	// Newsletter Sign Up Form
-	public function SendNewsletterForm($data, $form){
+	public function SendNewsletterForm($data, $form)
+	{
 		$email = new Email();
 		$email
 		    ->setFrom('"mSupply Newsletter Form" <mSupply@mail.yakpost.org>')
