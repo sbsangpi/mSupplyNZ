@@ -42,21 +42,8 @@
 
 <!-- Locations Section -->
 <section>
-    <!-- <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading">We're working around the globe</h2><br>
-                <p class="text-muted">We're from New Zealand, but now do most of our business in West Asia and the Pacific. Between our great customers and fantastic partners, we've got the whole world covered.</p>
-            </div>
-        </div>
-        <div class="wolrd-map row desktop-only">
-            <div class="world-map col-sm-12"></div>
-        </div>
-    </div> -->
 
     <!-- Customer Story Section-->
-    <!-- <br>
-    <br> -->
     <div class="container-fluid story-holder">
         <div class="row">
             <div class="col-sm-6 img-holder">
@@ -72,6 +59,6 @@
     </div>
 </section>
 
-<%include GetInTouch %>
+<% include GetInTouch %>
 
 
