@@ -1,6 +1,7 @@
 <?php
 
-class AboutPage extends Page {
+class AboutPage extends Page 
+{
 
 	private static $db = array(
 		'Subheading' => 'Varchar'
@@ -28,7 +29,8 @@ class AboutPage extends Page {
 	}
 }
 
-class AboutPage_Controller extends Page_Controller {
+class AboutPage_Controller extends Page_Controller 
+{
 	
 	
 }
