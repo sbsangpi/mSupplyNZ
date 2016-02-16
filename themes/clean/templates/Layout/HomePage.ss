@@ -8,7 +8,7 @@
             <div class="col-lg-5 header-content">
                 <h2 class="page-heading">$Intro</h2>
                 <p class="text-muted">$CTA</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Contact Us Now</a>
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">Contact Us Now!</a>
             </div>
         </div>
     </div>
